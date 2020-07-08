@@ -1,0 +1,26 @@
+<body>
+<div class="topnav" >
+    <% userList.forEach(function (user){ %>
+    <%if (user.is_active == 0){ %>
+    <% userRoleList.forEach(function (userRole) { %>
+            <p style="text-align: center">Twoje konto zostało zablokowane, powodem jest: <%= userRole.description%></p>
+        <a href="/users/logout">Wyloguj się</a>
+        <% })%>
+    <% }else{ %>
+        <select name="select" id="select" class="select" onChange="window.location.href=this.value">
+            <option selected disabled><%= user.username%></option>
+            <option value="/discovery/userDiscoveries?id=<%= user.user_id %>">Moje wpisy</option>
+            <option value="/users/showEditProfil?id=<%= user.user_id %>">Edytuj profil</option>
+            <% if(user.role_name == 'Admin') { %>
+                <option value="/adminPanel">Panel Administratora</option>
+                }
+            <% }%>
+            <option value="/users/logout">Wyloguj się</option>
+        </select>
+        <a href="/discovery/showDiscoveryAdd?id=<%= user.user_id%>">Dodaj</a>
+        <a href="/users">Główna</a>
+    <p id="pageName">Wykopalisko</p>
+    <%}%>
+    <% })%>
+
+</div>

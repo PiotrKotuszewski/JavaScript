@@ -1,0 +1,99 @@
+.container{
+    display: flex;
+
+}
+.tg{
+    border-collapse:collapse;
+    border-spacing:0;
+    border: 2px inset dodgerblue;
+    margin-left: 4%;
+    margin-top: 100px;
+}
+.tg td{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    padding:10px 14px;
+    overflow:hidden;
+    word-break:normal;
+    text-align: center;
+    border: 2px inset dodgerblue;
+
+}
+.tg th{
+    font-family:Arial, sans-serif;
+    font-size:16px;
+    font-weight:normal;
+    padding:10px 14px;
+    overflow:hidden;
+    word-break:normal;
+    border: 2px inset dodgerblue;
+}
+.tg .tg-0pky{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    margin-top: 230px;
+    margin-left: -90%;
+    font-size: 17px;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.wrong{
+    display: block;
+    font-size: 17px;
+    color: red;
+    border:none;
+    margin-top: 0px;
+    margin-left: 10%;
+
+}
+
+#profile{
+    font-size: 24px;
+    color: black;
+    border: none;
+    margin-top: 0;
+    margin-left: 5%;
+}
+
+#role{
+    font-size: 24px;
+    color: black;
+    border: none;
+    margin-top: 40px;
+    margin-left: -62px;
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+
+.links:link{
+    color: blue;
+    text-decoration: none;
+}
+
+.links:visited{
+    color: blue;
+    text-decoration: none;
+}
+
+.links:hover{
+    text-decoration: none;
+    color:#bfbfbf;
+}

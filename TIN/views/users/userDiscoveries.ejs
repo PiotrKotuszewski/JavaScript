@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/userDiscoveryStyle.css">
+    <script type="text/javascript" src="../js/userDiscoveriesValidation.js"></script>
+    <title>Wykopalisko</title>
+    <meta charset="UTF-8">
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<div class="container">
+    <table class="tg" id="mainTable">
+        <tr>
+            <th>Nazwa</th>
+            <th>Link</th>
+            <th>Suma ocen</th>
+            <th>Data dodatania</th>
+            <th>Akcje</th>
+        </tr>
+        <% discoveryList.forEach(function (discovery) { %>
+            <tr>
+                <td><%= discovery.name%></td>
+                <td><a class="links" href="<%= discovery.url%>"><%= discovery.url%></a></td>
+                <td><%= discovery.up_vote + discovery.down_vote%></td>
+                <td><%= discovery.date%></td>
+                <td>
+                    <a class="links" href="/discovery/deleteDiscovery?discoveryId=<%= discovery.discovery_id %>">Usuń</a><br/>
+                    <a class="links" href="/discovery/showEditDiscovery?discoveryId=<%= discovery.discovery_id %>">Edytuj</a>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+
+    <table class="tg">
+        <tr>
+            <th>Post</th>
+            <th>Suma ocen</th>
+            <th>Mój Głos</th>
+            <th>Data głosu</th>
+        </tr>
+        <% voteList.forEach(function (voteDiscovery) { %>
+        <tr>
+            <td><%= voteDiscovery.name%></td>
+            <td><%= voteDiscovery.vote_count%></td>
+            <td><%= voteDiscovery.type%></td>
+            <td><%= voteDiscovery.date%></td>
+        </tr>
+        <%})%>
+    </table>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

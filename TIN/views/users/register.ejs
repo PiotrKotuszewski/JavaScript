@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/registerStyle.css">
+    <script type="text/javascript" src="../js/registerValidation.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/not-logged-navigation-bar.ejs") %>
+
+<form action="add" name="registerForm" onsubmit="return registerValidation()" method ="post">
+    <h2>Załóż konto na...</h2>
+    <div class="input-container">
+        <input id="form-userId" type="hidden" name="userId" value=""/>
+        <i class="icon"><img src="../icons/icons8-user-30.png" alt=""/></i>
+        <input class="input-field" type="text" placeholder="Username" name="username" >
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-email-26.png"/></i>
+        <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-password-24.png"/></i>
+        <input class="input-field" type="password" placeholder="Password" name="password">
+    </div>
+
+    <button type="submit" class="btn" name="registerButton">Register</button>
+</form>
+<span id="usernameError" class="wrong-username"></span>
+<span id="emailError" class="wrong-email"></span>
+<% if(messages.emailError){ %>
+    <span id="emailSpan" class="wrong-email"><%= messages.emailError%></span>
+<% }%>
+<% if(messages.usernameError){ %>
+    <span id="usernameSpan" class="wrong-username"><%= messages.usernameError%></span>
+<%}%>
+<span id="passwordSpan" class="wrong-password"></span>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<%- include("../partials/footer.ejs") %>

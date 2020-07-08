@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/registerStyle.css">
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<h2 style="font-size: 24px;">Edytuj Profil</h2>
+<% userAndRoleList.forEach( function (userss) { %>
+<form action="editProfil" name="editUsername" method="post">
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-user-30.png" alt=""/></i>
+        <input type="text" name="username" value="<%= userss.username%>" class="input-field" readonly style="font-size: 15px; font-weight: bold">
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-email-26.png"/></i>
+        <input type="text" name="email" value="<%= userss.email%>" class="input-field">
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-r-24.png"/></i>
+        <input type="text" name="rola" value="<%= userss.role_name%>" class="input-field" readonly style="font-size: 15px; font-weight: bold">
+    </div>
+
+    <button type="submit" name="editProfil" class="btn">Edytuj</button>
+</form>
+    <%})%>
+
+<% if(messages.emailSpan){ %>
+    <span id="emailSpan" class="wrong-email"><%= messages.emailSpan%></span>
+<%}%>
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<%- include("../partials/footer.ejs") %>

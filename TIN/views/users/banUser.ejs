@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/addDiscoveryStyle.css">
+    <script type="text/javascript" src="../js/editDiscoveryValidation.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<h2>Zablokuj użytkownika</h2>
+<form action="banUser" name="banUser" method="post">
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-banned-24.png"/></i>
+        <textarea name="reason" placeholder="Powód zablokowania" col="40" rows="10" class="input-field" ></textarea>
+    </div>
+
+    <button type="submit" name="addDiscovery" class="btn">Zablokuj</button>
+</form>
+
+<%- include("../partials/footer.ejs") %>

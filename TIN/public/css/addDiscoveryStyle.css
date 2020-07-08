@@ -1,0 +1,86 @@
+* {box-sizing: border-box;}
+
+body{font-family:Arial, sans-serif;}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  width: 40%;
+  margin-left: 30%;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  width: 40%;
+  margin-left: 30%;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+h2{
+	font-size: 20px;
+	margin-left: 30%;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+a:link{
+	text-decoration: none;
+}
+
+.wrong-discovery{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border:none;
+	margin-top: -346px;
+	margin-left: 71%;
+	
+}
+
+.wrong-url{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border:none;
+	margin-left: 71%;
+	margin-top: 62px;
+}
+
+.wrong-desc{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border: none;
+	margin-left: 71%;
+	margin-top: 180px;
+}

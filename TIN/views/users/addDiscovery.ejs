@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/addDiscoveryStyle.css">
+    <script type="text/javascript" src="../js/addDiscoveryValidation.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<h2>Dodaj nowe znalezisko</h2>
+<form action="addDiscovery" name="addForm" onsubmit="return discoveryValidation()" method="post">
+    <input type="hidden" name="discoveryId" value=""/>
+    <input type="hidden" name="userId" value=""/>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-binoculars-26.png"/></i>
+        <input type="text" name="name" placeholder="Nazwa znaleziska" class="input-field" />
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-link-24.png"/></i>
+        <input type="text" name="url" placeholder="Url do źródła" class="input-field" />
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-text-box-24.png"/></i>
+        <textarea name="description" placeholder="Opis" col="40" rows="10" class="input-field" ></textarea>
+    </div>
+
+    <button type="submit" name="addDiscovery" class="btn">Dodaj</button>
+</form>
+
+<span id="discoverySpan" class="wrong-discovery"></span>
+<span id="urlSpan" class="wrong-url"></span>
+<span id="descSpan" class="wrong-desc"></span>
+<% if(messages.nameError){%>
+    <span id="nameError" class="wrong-discovery"><%= messages.nameError%></span>
+<%} %>
+
+<% if(messages.urlError){%>
+    <span id="urlError" class="wrong-url"><%= messages.urlError%></span>
+<%} %>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,142 @@
+body{font-family:Arial, sans-serif;}
+
+#container{
+	display: flex;
+	flex-direction: column;
+	margin-left: 140px;
+}
+
+.discovery{
+	border: 1px solid #dbdad7;
+	border-left: 6px solid dodgerblue;
+	border-radius: 24px;
+	width: 90%;
+	height: 260px;
+	left: 40%;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	
+	display: flex;
+	flex-direction: row;
+}
+
+.discoveryDesc{
+	width: 80%;
+	height: 210px;
+	max-height: 210px;
+	margin-left: 10px;
+	margin-top: 15px;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+.vote{
+	margin-left: 5px;
+	margin-top: 15px;
+	width: 15%;
+	height: 210px;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+.voteUpBtn{
+	background-color: green;
+	border: 2px inset green;
+	border-radius: 24px;
+	width: 70px;
+	height: 50px;
+	max-height: 50px;
+	margin-left: 30px;
+	opacity: 0.9;
+	margin-top: 10px;
+	margin-bottom: -39px;
+	text-align: center;
+	
+}
+
+.voteDownBtn{
+	background-color: red;
+	border: 2px inset red;
+	border-radius: 24px;
+	width: 70px;
+	height: 50px;
+	max-height: 50px;
+	margin-left: 30px;
+	opacity: 0.9;
+	text-align: center;
+}
+
+.voteCount{
+	background-color: white;
+	border: 2px inset dodgerblue;
+	border-radius: 24px;
+	width: 68px;
+	height: 50px;
+	max-height: 50px;
+	margin-left: 30px;
+	margin-bottom: 1px;
+	text-align: center;
+	font-size: 40px;
+}
+
+.voteUpBtn:hover{
+	opacity: 1;
+}
+
+.voteDownBtn:hover{
+	opacity: 1;
+}
+.discoveryLink{
+	font-size: 28px;
+	margin-left: 30px;
+}
+
+.discoveryLink:visited{
+	text-decoration: none;
+	color: black;
+}
+
+.discoveryLink:link{
+	text-decoration: none;
+	color: black;
+}
+
+.discoveryLink:hover{
+	color: gray;
+}
+
+.discoveryBtn{
+	position: relative;
+	background-color: dodgerblue;
+	width: 140px;
+	height: 40px;
+	border: 2px inset dodgerblue;
+	opacity: 0.9;
+	margin-left: 30px;
+	font-size: 14px;
+	bottom: -70px;
+
+}
+
+.discoveryBtn:link{
+	text-decoration: none;
+}
+.discoveryBtn:hover{
+	opacity: 1;
+}
+
+.desc{
+	font-size: 9px;
+	margin-left: 30px;
+	margin-top: -4px;
+}
+
+.description{
+	word-wrap: break-word;
+	width: 100%;
+	margin-left: 30px;
+	font-size: 15px;
+	text-align: left;
+}

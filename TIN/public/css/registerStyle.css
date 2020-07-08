@@ -1,0 +1,77 @@
+* {box-sizing: border-box;}
+body{font-family:Arial, sans-serif;}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  width: 30%;
+  margin-left: 35%;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+h2{
+	font-size: 15px;
+	margin-left: 35%;
+}
+
+.wrong-username{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border:none;
+	margin-top: -235px;
+	margin-left: 66%;
+	
+}
+
+.wrong-email{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border:none;
+	margin-left: 66%;
+	margin-top: -160px;
+}
+
+.wrong-password{
+	display: block;
+	font-size: 16px;
+	color: red;
+	border: none;
+	margin-left: 66%;
+	margin-top: 130px;
+}

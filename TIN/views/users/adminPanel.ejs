@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/adminPanelStyle.css">
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<body>
+<div class="topnav" >
+    <% loggedUserList.forEach(function (user){ %>
+    <select name="select" id="select" class="select" onChange="window.location.href=this.value">
+        <option selected disabled><%= user.username%></option>
+        <option value="/discovery/userDiscoveries?id=<%= user.user_id %>">Moje wpisy</option>
+        <% if(user.username == 'Admin') { %>
+            <option value="/adminPanel">Panel Administratora</option>
+            }
+        <% }%>
+        <option value="/users/logout">Wyloguj się</option>
+    </select>
+    <a href="/discovery/showDiscoveryAdd?id=<%= user.user_id%>">Dodaj</a>
+    <a href="/users">Główna</a>
+    <% })%>
+    <p id="pageName">Wykopalisko</p>
+</div>
+
+<div class="container">
+        <table class="tg" id="mainTable">
+            <tr>
+                <th>Twórca Znaleziska</th>
+                <th>Nazwa </th>
+                <th>Link</th>
+                <th>Suma ocen</th>
+                <th>Data dodatania</th>
+                <th>Akcje</th>
+            </tr>
+            <% discoveryList.forEach(function (discovery) { %>
+                <tr>
+                    <td><%= discovery.username%></td>
+                    <td><%= discovery.name%></td>
+                    <td><a class="links" href="<%= discovery.url%>"><%= discovery.url%></a></td>
+                    <td><%= discovery.vote_count%></td>
+                    <td><%= discovery.date%></td>
+                    <td>
+                        <a class="links" href="/adminPanel/deleteUserDiscovery?discoveryId=<%= discovery.discovery_id %>">Usuń</a>
+                    </td>
+                </tr>
+            <%})%>
+        </table>
+
+        <table class="tg" id="voteTable">
+            <tr>
+                <th>Użytkownik</th>
+                <th>Status użytkownika</th>
+                <th>Ilość znalezisk</th>
+                <th>Suma ocen jego znalezisk</th>
+                <th>Akcje</th>
+            </tr>
+            <% allUsersInfoList.forEach(function (users) { %>
+                <tr>
+                    <td><%= users.username%></td>
+                    <% if(users.is_active == 1){ %>
+                        <td>Aktywny</td>
+                   <% }else if (users.is_active == 0){%>
+                       <td>Zablokowany</td>
+                   <%}%>
+                    <td><%= users.discoveryCount%></td>
+                    <td><%= users.SumVoteCount%></td>
+                    <td>
+                        <% if(users.is_active == 1){ %>
+                        <a class="links" href="/adminPanel/showBanUserForm?username=<%= users.username%>">Zablokuj</a>
+                    <%    }else if(users.is_active == 0){ %>
+                        <a class="links" href="/adminPanel/unBanUser?username=<%= users.username%>">Odblokuj</a>
+                      <%  }%>
+                        <a class="links" href="/adminPanel/deleteUser?user_id=<%= users.user_id %>&username=<%= users.username%>">Usuń użytkownika</a>
+                    </td>
+                </tr>
+            <% })%>
+        </table>
+</div>
+
+<%- include("../partials/footer.ejs") %>

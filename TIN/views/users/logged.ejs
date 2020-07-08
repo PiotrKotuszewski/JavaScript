@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/homePageStyle.css">
+    <script type="text/javascript" src="../model/discovery.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<div id="container">
+    <% discoveryList.forEach(function (discovery) { %>
+        <div class="discovery">
+            <div class="vote">
+                <a class="voteUpBtn" name="voteUp" href="/vote/upVote?id=<%= discovery.discovery_id%>&type=UP_VOTE"><img src="../icons/icons8-thumbs-up-24%20(1).png" style="margin-top: 10px"/></a>
+                <p class="voteCount" name="allVotes"><%= discovery.up_vote + discovery.down_vote%></p>
+                <a class="voteDownBtn" name="voteDown" href="/vote/downVote?id=<%= discovery.discovery_id%>&type=DOWN_VOTE"><img src="../icons/icons8-thumbs-down-24%20(1).png" style="margin-top: 10px"/></a>
+            </div>
+
+            <div class="discoveryDesc">
+                <a href="<%= discovery.url %>" class="discoveryLink"><%= discovery.name %></a>
+                <small class="desc">Dodane przez: <%= discovery.username %>, Dnia: <%= discovery.date %></small>
+                <p class="description"><%= discovery.description %></p>
+                <form action="<%= discovery.url %>">
+                    <input class="discoveryBtn" type="submit" value="Przejdź do strony" />
+                </form>
+            </div>
+        </div>
+    <%})%>
+</div>
+
+<%- include("../partials/footer.ejs") %>

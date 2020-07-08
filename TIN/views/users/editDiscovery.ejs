@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/addDiscoveryStyle.css">
+    <script type="text/javascript" src="../js/editDiscoveryValidation.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+<%- include("../partials/logged-navigation-bar.ejs") %>
+
+<h2>Edytuj znalezisko</h2>
+<% discoveryList.forEach( function (discovery) { %>
+<form action="editDiscovery" name="editForm" onsubmit="return validation()" method ="post">
+        <div class="input-container">
+            <i class="icon"><img src="../icons/icons8-binoculars-26.png"/></i>
+            <input type="text" name="name" value="<%= discovery.name%>" class="input-field" readonly style="font-size: 15px; font-weight: bold">
+        </div>
+
+        <div class="input-container">
+            <i class="icon"><img src="../icons/icons8-link-24.png"/></i>
+            <input type="url" name="url" value="<%= discovery.url%>" class="input-field" readonly style="font-size: 15px; font-weight: bold">
+        </div>
+
+        <div class="input-container">
+            <i class="icon"><img src="../icons/icons8-text-box-24.png"/></i>
+            <textarea name="description" placeholder="Opis" col="40" rows="8" class="input-field" ><%= discovery.description%></textarea>
+        </div>
+
+
+        <button type="submit" name="addDiscovery" class="btn">Edytuj</button>
+</form>
+<%})%>
+
+<span id="wrongEdit" class="wrong-desc" style="margin-top: -150px"></span>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<%- include("../partials/footer.ejs") %>

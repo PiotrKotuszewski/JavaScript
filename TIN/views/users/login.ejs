@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/footerStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/topNavStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
+    <script type="text/javascript" src="../js/loginValidation.js"></script>
+    <meta charset="UTF-8">
+    <title>Wykopalisko</title>
+</head>
+
+
+<%- include("../partials/not-logged-navigation-bar.ejs") %>
+
+<form action="login" name="loginForm" onsubmit="return validate()" method="post">
+    <h2>Zaloguj się</h2>
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-email-26.png"/></i>
+        <input class="input-field" type="text" placeholder="Email" name="email">
+    </div>
+
+    <div class="input-container">
+        <i class="icon"><img src="../icons/icons8-password-24.png"/></i>
+        <input class="input-field" type="password" placeholder="Password" name="password">
+    </div>
+
+    <button type="submit" class="btn">Zaloguj</button>
+
+    <a id="link" href="/users/showNewForm">Zarejestruj się</a>
+</form>
+
+<span id="wrongUsername" class="wrong-username"></span>
+<span id="wrongPassword" class="wrong-password"></span>
+<% if(messages.loginError){ %>
+    <span id="wrongLogin" class="wrong-login"><%= messages.loginError%></span>
+<%}%>
+<% if(messages.wrongEmail){ %>
+    <span id="wrongEmail" class="wrong-username"><%= messages.wrongEmail%></span>
+<%}%>
+<% if(messages.wrongPassword){ %>
+    <span id="wrongPassword" class="wrong-password"><%= messages.wrongPassword%></span>
+<%}%>
+<br/><br/><br/><br/><br/><br/><br/>
+
+<%- include("../partials/footer.ejs") %>

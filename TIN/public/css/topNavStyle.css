@@ -1,0 +1,89 @@
+.topnav {
+  background-color: dodgerblue;
+  overflow: hidden;
+  border-radius: 24px;
+  font-family:Arial, sans-serif;
+  
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: dodgerblue;
+  color: #bfbfbf;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: #bfbfbf;
+}
+
+#pageName{
+	font-size: 17px;
+	color: #f2f2f2;
+	margin-left: 20px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 10em;
+  height: 3em;
+  line-height: 3;
+  background: dodgerblue;
+  overflow: hidden;
+  border-radius: .25em;
+  float: right;
+  font-size: 17px;
+  margin-top: -0.5px;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
