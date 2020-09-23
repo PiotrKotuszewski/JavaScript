@@ -1,0 +1,1 @@
+Aplikacja umozliwiajaca dodawanie cytatow i oddawanie glosow co wplywa na ranking.
